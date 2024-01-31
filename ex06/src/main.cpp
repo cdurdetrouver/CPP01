@@ -1,19 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   RandomChump.cpp                                    :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gbazart <gbazart@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/31 10:26:29 by gbazart           #+#    #+#             */
-/*   Updated: 2024/01/31 10:49:54 by gbazart          ###   ########.fr       */
+/*   Created: 2024/01/31 15:47:33 by gbazart           #+#    #+#             */
+/*   Updated: 2024/01/31 18:32:52 by gbazart          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.h"
+#include "Harl.hpp"
 
-void randomChump(std::string name)
+int main(int argc, char **argv)
 {
-	Zombie	zombie = Zombie(name);
-	zombie.announce();
+	Harl harl = Harl();
+
+	if (argc == 2)
+		harl.complain(argv[2]);
+	return (0);
 }

@@ -1,19 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   RandomChump.cpp                                    :+:      :+:    :+:   */
+/*   Zombie.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gbazart <gbazart@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/31 10:26:29 by gbazart           #+#    #+#             */
-/*   Updated: 2024/01/31 10:49:54 by gbazart          ###   ########.fr       */
+/*   Created: 2024/01/31 10:56:12 by gbazart           #+#    #+#             */
+/*   Updated: 2024/01/31 10:56:30 by gbazart          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.h"
+#ifndef ZOMBIE_H
+# define ZOMBIE_H
 
-void randomChump(std::string name)
-{
-	Zombie	zombie = Zombie(name);
-	zombie.announce();
-}
+# include <iostream>
+# include <string>
+
+# include "Zombie.hpp"
+
+Zombie* newZombie(std::string name);
+void randomChump(std::string name);
+
+#endif

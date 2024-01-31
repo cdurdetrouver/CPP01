@@ -1,9 +1,9 @@
 
-NAME = Zombie
+NAME = Harl_filter
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -I$(INCLUDE)
 INCLUDE = includes
 SRC_DIR = src
-SRC = src/main.cpp src/NewZombie.cpp src/RandomChump.cpp src/Zombie.cpp
+SRC = src/main.cpp src/Harl.cpp
 OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)

@@ -1,9 +1,8 @@
 
-NAME = Zombie
-CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -I$(INCLUDE)
-INCLUDE = includes
+NAME = Substr
+CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 SRC_DIR = src
-SRC = src/main.cpp src/NewZombie.cpp src/RandomChump.cpp src/Zombie.cpp
+SRC = main.cpp
 OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)
