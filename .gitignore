@@ -3,6 +3,10 @@
 *.o
 
 # executable
-ex00/megaphone
-ex01/PhoneBook
-ex02/GlobalBank
+ex00/Zombie
+ex01/Zombiehorde
+ex02/Cerveau
+ex03/Weapon
+ex04/Substr
+ex05/Harl2.0
+ex06/Harl_filter

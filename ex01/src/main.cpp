@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gbazart <gbazart@student.42.fr>            +#+  +:+       +#+        */
+/*   By: gbazart <gabriel.bazart@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 10:55:57 by gbazart           #+#    #+#             */
-/*   Updated: 2024/01/31 14:10:06 by gbazart          ###   ########.fr       */
+/*   Updated: 2024/02/01 15:26:59 by gbazart          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,16 @@ int	main(void)
 			horde[i].announce();
 		}
 	}
-	horde = zombieHorde(3, "maxime");
+	horde = zombieHorde(2, "test");
+	if (horde != NULL)
+	{
+		for (int i = 0;i < 2; i++)
+		{
+			horde[i].announce();
+		}
+		delete[] horde;
+	}
+	horde = zombieHorde(3, "");
 	if (horde != NULL)
 	{
 		for (int i = 0;i < 3; i++)

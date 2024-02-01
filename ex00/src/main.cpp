@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gbazart <gbazart@student.42.fr>            +#+  +:+       +#+        */
+/*   By: gbazart <gabriel.bazart@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 10:26:23 by gbazart           #+#    #+#             */
-/*   Updated: 2024/01/31 10:54:23 by gbazart          ###   ########.fr       */
+/*   Updated: 2024/02/01 15:28:35 by gbazart          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ int	main(void)
 {
 	Zombie	*zombie;
 
-	zombie = newZombie("julien");
+	zombie = newZombie("JUlien");
 	zombie->announce();
-	randomChump("");
 	delete	zombie;
+	randomChump("gbazart");
 }
