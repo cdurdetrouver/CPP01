@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gbazart <gbazart@student.42.fr>            +#+  +:+       +#+        */
+/*   By: gbazart <gabriel.bazart@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 15:47:33 by gbazart           #+#    #+#             */
-/*   Updated: 2024/01/31 18:32:52 by gbazart          ###   ########.fr       */
+/*   Updated: 2024/02/01 15:39:20 by gbazart          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,6 @@ int main(int argc, char **argv)
 	Harl harl = Harl();
 
 	if (argc == 2)
-		harl.complain(argv[2]);
+		harl.complain(argv[1]);
 	return (0);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Harl.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gbazart <gbazart@student.42.fr>            +#+  +:+       +#+        */
+/*   By: gbazart <gabriel.bazart@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 15:47:52 by gbazart           #+#    #+#             */
-/*   Updated: 2024/01/31 18:33:12 by gbazart          ###   ########.fr       */
+/*   Updated: 2024/02/01 15:58:03 by gbazart          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void	Harl::error(void)
 	std::cout << "This is unacceptable ! I want to speak to the manager now." << std::endl;
 }
 
-void	Harl::complain(std::string level)
+void Harl::complain(std::string level)
 {
 	std::map<std::string, Fonctions> s_mapStringValues;
 
@@ -56,6 +56,7 @@ void	Harl::complain(std::string level)
 	s_mapStringValues["INFO"] = INFO;
 	s_mapStringValues["WARNING"] = WARNING;
 	s_mapStringValues["ERROR"] = ERROR;
+
 	void (Harl::*pointeur[4])(void) = {
 		&Harl::debug,
 		&Harl::info,
@@ -63,19 +64,27 @@ void	Harl::complain(std::string level)
 		&Harl::error
 	};
 
-	switch(s_mapStringValues[level])
-	{
-		case DEBUG:
-			(this->*(pointeur[DEBUG]))();
-		case INFO:
-			(this->*(pointeur[INFO]))();
-		case WARNING:
-			(this->*(pointeur[WARNING]))();
-		case ERROR:
-			(this->*(pointeur[ERROR]))();
-			break;
-		default:
-			std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
-			break;
+	std::map<std::string, Fonctions>::iterator iter = s_mapStringValues.find(level);
+	if (iter != s_mapStringValues.end()) {
+		switch(iter->second)
+		{
+			case DEBUG:
+				(this->*(pointeur[DEBUG]))();
+				// fall through
+			case INFO:
+				(this->*(pointeur[INFO]))();
+				// fall through
+			case WARNING:
+				(this->*(pointeur[WARNING]))();
+				// fall through
+			case ERROR:
+				(this->*(pointeur[ERROR]))();
+				// fall through
+				break;
+			default:
+				break;
+		}
+	} else {
+		std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
 	}
 }
