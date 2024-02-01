@@ -6,7 +6,7 @@
 /*   By: gbazart <gbazart@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 11:56:52 by gbazart           #+#    #+#             */
-/*   Updated: 2024/01/31 12:05:49 by gbazart          ###   ########.fr       */
+/*   Updated: 2024/02/01 19:57:52 by gbazart          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class Weapon
 		Weapon(std::string	type);
 		~Weapon();
 
-		std::string	getType(void);
+		const std::string	getType(void) const;
 		void		setType(std::string	type);
 };
 

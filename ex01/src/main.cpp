@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gbazart <gabriel.bazart@gmail.com>         +#+  +:+       +#+        */
+/*   By: gbazart <gbazart@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 10:55:57 by gbazart           #+#    #+#             */
-/*   Updated: 2024/02/01 15:26:59 by gbazart          ###   ########.fr       */
+/*   Updated: 2024/02/01 18:44:05 by gbazart          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,9 @@ int	main(void)
 		{
 			horde[i].announce();
 		}
+		delete[] horde;
 	}
+	std::cout << std::endl;
 	horde = zombieHorde(2, "test");
 	if (horde != NULL)
 	{
@@ -33,6 +35,7 @@ int	main(void)
 		}
 		delete[] horde;
 	}
+	std::cout << std::endl;
 	horde = zombieHorde(3, "");
 	if (horde != NULL)
 	{

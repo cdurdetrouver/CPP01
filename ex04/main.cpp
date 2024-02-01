@@ -6,7 +6,7 @@
 /*   By: gbazart <gbazart@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 14:20:31 by gbazart           #+#    #+#             */
-/*   Updated: 2024/01/31 16:34:05 by gbazart          ###   ########.fr       */
+/*   Updated: 2024/02/01 19:44:07 by gbazart          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ std::string	replace(std::string str, std::string s1, std::string s2)
 		}
 		else
 			break;
-		i = found;
+		i = found + (s2.length() - s1.length() + 1);
 	}
 	return (str);
 }
@@ -81,13 +81,3 @@ int main(int argc, char **argv)
 	foutput.close();
 	return (0);
 }
-
-// std::string replace(std::string str,std::string str1, std::string str2)
-// {
-// 	std::string	dest;
-
-// 	while (str)
-// 	{
-// 		str++;
-// 	}
-// }

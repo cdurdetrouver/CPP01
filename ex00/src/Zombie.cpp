@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gbazart <gabriel.bazart@gmail.com>         +#+  +:+       +#+        */
+/*   By: gbazart <gbazart@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 10:26:16 by gbazart           #+#    #+#             */
-/*   Updated: 2024/02/01 15:28:07 by gbazart          ###   ########.fr       */
+/*   Updated: 2024/02/01 20:00:31 by gbazart          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ Zombie::~Zombie(void)
 	std::cout << "Zombie " << (this->name.empty() ? "no name" : this->name) << " is destroyed." << std::endl;
 }
 
-Zombie::Zombie(std::string name)
+Zombie::Zombie(std::string name) : name(name)
 {
-	this->name = name;
+	std::cout << "Zombie " << (this->name.empty() ? "no name" : this->name) << " is created." << std::endl;
 }

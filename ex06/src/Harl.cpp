@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Harl.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gbazart <gabriel.bazart@gmail.com>         +#+  +:+       +#+        */
+/*   By: gbazart <gbazart@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 15:47:52 by gbazart           #+#    #+#             */
-/*   Updated: 2024/02/01 15:58:03 by gbazart          ###   ########.fr       */
+/*   Updated: 2024/02/01 19:49:15 by gbazart          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <stdexcept>
 #include <map>
 
-enum Fonctions{DEBUG,INFO,WARNING,ERROR};
+enum Fonctions{DEBUG,INFO,WARNING,ERROR, NONE};
 
 Harl::Harl()
 {
@@ -48,43 +48,33 @@ void	Harl::error(void)
 	std::cout << "This is unacceptable ! I want to speak to the manager now." << std::endl;
 }
 
-void Harl::complain(std::string level)
+void	Harl::complain(std::string level)
 {
-	std::map<std::string, Fonctions> s_mapStringValues;
+	Fonctions check;
+	if (level == "DEBUG")
+		check = DEBUG;
+	else if (level == "INFO")
+		check = INFO;
+	else if (level == "WARNING")
+		check = WARNING;
+	else if (level == "ERROR")
+		check = ERROR;
+	else
+		check = NONE;
 
-	s_mapStringValues["DEBUG"] = DEBUG;
-	s_mapStringValues["INFO"] = INFO;
-	s_mapStringValues["WARNING"] = WARNING;
-	s_mapStringValues["ERROR"] = ERROR;
-
-	void (Harl::*pointeur[4])(void) = {
-		&Harl::debug,
-		&Harl::info,
-		&Harl::warning,
-		&Harl::error
-	};
-
-	std::map<std::string, Fonctions>::iterator iter = s_mapStringValues.find(level);
-	if (iter != s_mapStringValues.end()) {
-		switch(iter->second)
-		{
-			case DEBUG:
-				(this->*(pointeur[DEBUG]))();
-				// fall through
-			case INFO:
-				(this->*(pointeur[INFO]))();
-				// fall through
-			case WARNING:
-				(this->*(pointeur[WARNING]))();
-				// fall through
-			case ERROR:
-				(this->*(pointeur[ERROR]))();
-				// fall through
-				break;
-			default:
-				break;
-		}
-	} else {
-		std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
+	switch(check)
+	{
+		case DEBUG:
+			debug();
+		case INFO:
+			info();
+		case WARNING:
+			warning();
+		case ERROR:
+			error();
+			break;
+		default:
+			std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
+			break;
 	}
 }
