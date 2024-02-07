@@ -6,7 +6,7 @@
 /*   By: gbazart <gbazart@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 14:20:31 by gbazart           #+#    #+#             */
-/*   Updated: 2024/02/01 19:44:07 by gbazart          ###   ########.fr       */
+/*   Updated: 2024/02/07 09:53:29 by gbazart          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,9 @@ int main(int argc, char **argv)
 	std::ifstream finput;
 	std::ofstream foutput;
 
-	if (argc != 4 || (argv[2][0] == 0 || argv[3][0] == 0))
+	if (argc != 4 || argv[2][0] == 0)
 	{
-		std::cerr << "Porgram input : file string1 (not empty) string2 (not empty)" << std::endl;
+		std::cerr << "Porgram input : file string1 (not empty) string2" << std::endl;
 		return (1);
 	}
 	finput.open(argv[1], std::ios::in);
